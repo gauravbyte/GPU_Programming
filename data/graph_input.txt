@@ -1,0 +1,3 @@
+# Sample graph input file for Assignment 3
+# This is a placeholder - update with actual graph data format
+# Format depends on your graph.hpp implementation

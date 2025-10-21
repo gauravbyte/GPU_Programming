@@ -1,0 +1,59 @@
+# Build directories
+build/
+bin/
+lib/
+
+# Compiled files
+*.o
+*.so
+*.a
+*.exe
+*.out
+
+# Output files
+*.txt
+!data/*.txt
+!data/README.md
+!README.md
+
+# IDE and editor files
+.vscode/.ropeproject
+.vscode/launch.json.bak
+*.swp
+*.swo
+*~
+.DS_Store
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# CUDA compilation cache
+*.fatbin
+*.cubin
+*.ptx
+
+# Profiling data
+*.nvprof
+*.qdrep
+*.sqlite
+
+# Test outputs
+tests/*.txt
+!tests/README.md
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Temporary files
+*.log
+*.tmp

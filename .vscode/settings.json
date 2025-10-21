@@ -1,0 +1,29 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "*.cu": "cuda-cpp",
+        "*.cuh": "cuda-cpp",
+        "*.h": "c",
+        "*.hpp": "cpp"
+    },
+    "editor.formatOnSave": false,
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/include",
+        "/usr/local/cuda/include"
+    ],
+    "C_Cpp.default.compilerPath": "/usr/local/cuda/bin/nvcc",
+    "C_Cpp.default.cppStandard": "c++14",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "cmake.configureOnOpen": false,
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/build": false,
+        "**/*.o": true
+    },
+    "search.exclude": {
+        "**/build": true,
+        "**/.git": true
+    }
+}

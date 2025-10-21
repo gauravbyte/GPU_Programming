@@ -1,0 +1,120 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build All",
+            "type": "shell",
+            "command": "${workspaceFolder}/scripts/build.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": ["$gcc", "$nvcc"]
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "${workspaceFolder}/scripts/clean.sh",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Run Assignment 1",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/bin/assignment1",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true
+            },
+            "dependsOn": ["Build All"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Assignment 2",
+            "type": "shell",
+            "command": "${workspaceFolder}/scripts/run_assignment2.sh",
+            "args": [
+                "${workspaceFolder}/data/assignment2_input.txt",
+                "${workspaceFolder}/tests/assignment2_output.txt"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true
+            },
+            "dependsOn": ["Build All"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Assignment 3",
+            "type": "shell",
+            "command": "${workspaceFolder}/scripts/run_assignment3.sh",
+            "args": [
+                "${workspaceFolder}/data/graph_input.txt",
+                "verbose"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true
+            },
+            "dependsOn": ["Build All"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Run All Tests",
+            "type": "shell",
+            "command": "${workspaceFolder}/scripts/run_tests.sh",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true
+            },
+            "dependsOn": ["Build All"],
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake Configure",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-B",
+                "${workspaceFolder}/build",
+                "-S",
+                "${workspaceFolder}",
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake Build",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--config",
+                "Release",
+                "-j",
+                "8"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "dependsOn": ["CMake Configure"],
+            "problemMatcher": ["$gcc", "$nvcc"]
+        }
+    ]
+}
